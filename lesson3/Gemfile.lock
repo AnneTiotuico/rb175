@@ -1,0 +1,12 @@
+GEM
+  specs:
+    webrick (1.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  webrick
+
+BUNDLED WITH
+   2.1.4
