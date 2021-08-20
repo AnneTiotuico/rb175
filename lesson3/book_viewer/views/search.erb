@@ -9,7 +9,17 @@
 <ul>
     <% @found.each do |chapter, idx| %>
       <li>
-        <a href="/chapters/<%= idx + 1 %>"><%= chapter %></a>
+        <%= chapter %>
       </li>
+      <ul>
+          <% in_paragraphs(File.read("data/chp#{idx + 1}.txt")).each_with_index do |p, id| %>
+            <% if p.include?(@search_text) %>
+              <li>
+                <a href="/chapters/<%= idx + 1 %>#p-<%= id + 1 %>"><%= p %></a>
+              </li>
+            <% end %>
+          <% end %>
+      </ul>
     <% end %>
+    
 </ul>

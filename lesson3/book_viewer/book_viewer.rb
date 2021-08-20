@@ -46,6 +46,7 @@ get "/search" do
       if @ch_text.include?(@search_text)
         @found[ch] = idx
       end
+      
     end
     unless @found.empty?
       @results = "<h2 class='content-subhead'>Results for '#{@search_text}'</h2>"
@@ -53,6 +54,8 @@ get "/search" do
       @results = "<p>Sorry, no matches were found.</p>"
     end
   end
+  
+  
   
   erb :search
 end
