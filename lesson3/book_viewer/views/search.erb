@@ -15,7 +15,7 @@
           <% in_paragraphs(File.read("data/chp#{idx + 1}.txt")).each_with_index do |p, id| %>
             <% if p.include?(@search_text) %>
               <li>
-                <a href="/chapters/<%= idx + 1 %>#p-<%= id + 1 %>"><%= p %></a>
+                <a href="/chapters/<%= idx + 1 %>#p-<%= id + 1 %>"><%= highlight_text(p, @search_text) %></a>
               </li>
             <% end %>
           <% end %>

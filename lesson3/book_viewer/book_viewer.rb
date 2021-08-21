@@ -10,6 +10,10 @@ helpers do
   def in_paragraphs(text)
     text.split("\n\n")
   end
+  
+  def highlight_text(text, search_text)
+    text.gsub(search_text, "<strong>#{search_text}</strong>")
+  end
 end
 
 not_found do
