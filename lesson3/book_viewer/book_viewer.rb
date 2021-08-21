@@ -40,6 +40,7 @@ get "/chapters/:number" do
 end
 
 get "/search" do
+  @title = "Search"
   @search_text = params[:query]
   @results = ''
   @found = {}
