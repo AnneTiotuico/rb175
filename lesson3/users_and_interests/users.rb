@@ -15,7 +15,7 @@ helpers do
    def count_interests
       total_interests = 0
       users = USER_INFO.each_key.count
-      USER_INFO.each_key do |user|
+      @users.each do |user|
          total_interests += USER_INFO[user.to_sym][:interests].count
       end
       "There are #{users} users with a total of #{total_interests} interests."

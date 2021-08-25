@@ -8,8 +8,9 @@
 
 <br>
 <br>
+<h4>Other users:</h4>
 <% @users.each do |user| %>
     <% unless user == @user %>
         <a href="/users/<%=user%>"><%= user.capitalize %></a>
-        <% end %>
+    <% end %>
 <% end %>
