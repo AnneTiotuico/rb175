@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
 require "tilt/erubis"
 
 before do
@@ -60,18 +60,5 @@ get "/search" do
     end
   end
   
-  
-  
   erb :search
 end
-
-=begin 
-if results are found, display "<h2>Results for 'truck'<h2>"
-and the chapter links
-else, display <p>"Sorry, no matches found"</p>
-
-if text is found in any chapters, return that chapter and a link to it as an unordered list
-iterate through each chapter and see if the text is matched in the chapter, if so return that chapter title
-
-
-=end
